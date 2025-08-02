@@ -11,6 +11,12 @@
       max-width: 600px;
       margin: 0 auto;
       background-color: #f5f5f5;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 20px;
     }
     input {
       width: 100%;
@@ -19,6 +25,7 @@
       border: 1px solid #ddd;
       border-radius: 4px;
       font-size: 16px;
+      box-sizing: border-box;
     }
     button {
       width: 100%;
@@ -29,6 +36,10 @@
       border-radius: 4px;
       font-size: 16px;
       cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
     }
     #result {
       margin-top: 20px;
@@ -38,10 +49,14 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       display: none;
     }
+    #output {
+      font-size: 18px;
+      color: #333;
+    }
   </style>
 </head>
 <body>
-  <h1 style="color: #2c3e50; text-align: center;">เครื่องมือวิเคราะห์หวยลาว</h1>
+  <h1>เครื่องมือวิเคราะห์หวยลาว</h1>
   
   <input 
     type="text" 
@@ -49,24 +64,28 @@
     placeholder="กรอกเลข 4 ตัว"
     maxlength="4"
     inputmode="numeric"
+    pattern="\d*"
   >
   
   <button onclick="calculate()">คำนวณเลขเด่น</button>
   
   <div id="result">
-    <h3 style="color: #2c3e50;">ผลการวิเคราะห์:</h3>
-    <p id="output" style="font-size: 18px;"></p>
+    <h3>ผลการวิเคราะห์:</h3>
+    <p id="output"></p>
   </div>
 
   <script>
     function calculate() {
-      const num = document.getElementById('lotto-number').value;
-      if (num.length !== 4 || !/^\d+$/.test(num)) {
-        alert("กรุณากรอกเลข 4 หลักให้ถูกต้อง");
+      const inputElement = document.getElementById('lotto-number');
+      const num = inputElement.value.trim();
+      
+      if (num.length !== 4 || !/^\d{4}$/.test(num)) {
+        alert("กรุณากรอกเลข 4 หลักให้ถูกต้อง (0-9 เท่านั้น)");
+        inputElement.focus();
         return;
       }
       
-      const lastDigit = num[3];
+      const lastDigit = num.charAt(3);
       const compareMap = {
         '0': '4, 5, 7, 8, 9',
         '1': '5, 6, 8, 9, 0',
@@ -85,6 +104,11 @@
       `;
       document.getElementById('result').style.display = 'block';
     }
+
+    // เพิ่มการตรวจสอบขณะพิมพ์
+    document.getElementById('lotto-number').addEventListener('input', function(e) {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
   </script>
 </body>
 </html>

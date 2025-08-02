@@ -1,0 +1,21 @@
+{
+  "name": "เครื่องมือวิเคราะห์หวยลาว",
+  "short_name": "วิเคราะห์หวยลาว",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f3f4f6",
+  "theme_color": "#4f46e5",
+  "description": "เครื่องมือวิเคราะห์หวยลาวพัฒนาสูตรใหม่ พร้อมระบบตรวจผลและบันทึก",
+  "icons": [
+    {
+      "src": "https://placehold.co/192x192/4f46e5/ffffff?text=Lao",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://placehold.co/512x512/4f46e5/ffffff?text=Lao",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

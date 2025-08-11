@@ -1,0 +1,32 @@
+body {
+  font-family: sans-serif;
+  background: linear-gradient(to right, #f0f8ff, #e6f7ff);
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  color: #0077cc;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+li {
+  margin: 0.5rem 0;
+  cursor: pointer;
+  color: #0055aa;
+  font-weight: bold;
+}
+
+li:hover {
+  text-decoration: underline;
+}
+
+audio {
+  margin-top: 2rem;
+  width: 80%;
+}

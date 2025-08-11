@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎵 Music Playlist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🎶 Music Playlist</h1>
+
+  <ul id="playlist"></ul>
+
+  <audio id="player" controls></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
